@@ -1,0 +1,4 @@
+---
+spec_version: '1.0'
+indicators:
+  response_time_p90: "metricSelector=builtin:service.response.time:merge(\"dt.entity.service\"):percentile(90)&entitySelector=type(SERVICE)"
