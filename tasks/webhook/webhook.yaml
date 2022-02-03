@@ -1,0 +1,13 @@
+apiVersion: webhookconfig.keptn.sh/v1alpha1
+kind: WebhookConfig
+metadata:
+  name: webhook-configuration
+spec:
+  webhooks:
+    - type: sh.keptn.event.evaluation.finished
+      requests:
+        - curl --request POST --data '{"result":" {{ .data.evaluation.result
+          }}","score":"{{ .data.evaluation.score}}","project":"{{ .data.project
+          }}","service":"{{ .data.service}}","stage":"{{ .data.stage}}"}'
+          https://maker.ifttt.com/trigger/qualitygate/json/with/key/iqEkVP1ZeLOyfWjDH1ZYFn6kWAKzZ1x9IWC3Fk6oq1Y
+      subscriptionID: 0bd37230-b8c2-4574-b287-b5e7ee1b2568
